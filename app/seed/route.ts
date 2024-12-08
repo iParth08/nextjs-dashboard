@@ -118,3 +118,6 @@
 // }
 
 //! THIS WAS A ONE TIME RUN TO SEED THE DATABASE WITH Placeholder-DATA
+export async function GET() {
+  return Response.json({ message: "DB seed is successfully planted :)" });
+}

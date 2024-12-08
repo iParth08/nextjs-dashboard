@@ -21,3 +21,6 @@
 // }
 
 //! One time run to check the database
+export async function GET() {
+  return Response.json({ message: "Query route is successfully checked" });
+}
