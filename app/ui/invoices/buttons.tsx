@@ -28,7 +28,7 @@ export function UpdateInvoice({ id }: { id: string }) {
 export function DeleteInvoice({ id }: { id: string }) {
   //action is to be done with just the click
   // const deleteInvoiceWithId = deleteInvoice.bind(null, id);
-  const deleteInvoiceAction = async (formData: FormData) => {
+  const deleteInvoiceAction = async () => {
     try {
       await deleteInvoice(id); // Call your delete function
     } catch (error) {
