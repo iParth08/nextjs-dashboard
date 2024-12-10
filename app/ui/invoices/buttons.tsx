@@ -27,20 +27,14 @@ export function UpdateInvoice({ id }: { id: string }) {
 
 export function DeleteInvoice({ id }: { id: string }) {
   //action is to be done with just the click
-  // const deleteInvoiceWithId = deleteInvoice.bind(null, id);
-  const deleteInvoiceAction = async () => {
-    try {
-      await deleteInvoice(id); // Call your delete function
-    } catch (error) {
-      console.error("Failed to delete invoice:", error);
-    }
-  };
+  const deleteInvoiceWithId = deleteInvoice.bind(null, id);
   return (
-    <form action={deleteInvoiceAction}>
-      <button className="rounded-md border p-2 hover:bg-red-500 hover:text-white">
-        <span className="sr-only">Delete</span>
-        <TrashIcon className="w-5" />
-      </button>
-    </form>
+    <button
+      className="rounded-md border p-2 hover:bg-red-500 hover:text-white"
+      onClick={deleteInvoiceWithId}
+    >
+      <span className="sr-only">Delete</span>
+      <TrashIcon className="w-5" />
+    </button>
   );
 }
