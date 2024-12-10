@@ -603,6 +603,55 @@ return (
 - _What is NextAuth?_
   NextAuth.js is an authentication library for Next.js that provides a simple and secure way to add authentication to your Next.js application.
 
+  **STEPS INVOLVED:**
+
+  1. _Installation_
+
+  ```bash
+    npm install next-auth@beta
+  ```
+
+  2. _Secret Key for App_ : Cookies encryption
+
+  ```bash
+    openssl rand -base64 32
+  ```
+
+  3. _Configuration_
+     Learn more at [docs](https://next-auth.js.org/getting-started/example)
+
+## Metadata
+
+- In web development, metadata provides additional details about a webpage. Metadata is not visible to the users visiting the page.
+
+- Metadata plays a significant role in enhancing a webpage's SEO, making it more accessible and understandable for search engines and social media platforms.
+
+- [docs](https://nextjs.org/learn/dashboard-app/adding-metadata)
+
+```tsx
+//root/layout.tsx
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Acme Dashboard",
+    default: "Acme Dashboard",
+  },
+  description: "The official Next.js Learn Dashboard built with App Router.",
+  metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+};
+```
+
+```tsx
+//invoice/page.tsx
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Invoices", //updated by template
+};
+```
+
 # Additionals
 
 ## Visualization
@@ -767,3 +816,9 @@ export async function createInvoice(prevState: State, formData: FormData) {
    ```
 
 2. Server component not working properly on VERCEL
+
+> [!NOTE]
+>
+> LOGIN CREDENTIALS
+> Email: user@nextmail.com
+> Password: 123456
